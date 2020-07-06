@@ -12,12 +12,21 @@ const addMessage = (message) => {
         .catch(error => log(err(error)))
 }
 
-const getMessages = async (filterByUser) => {
-    let filter = {}
-    if(filterByUser){
-        filter = { user: filterByUser }
-    }
-    return await Message.find(filter)
+const getMessages = (filterByUser) => {
+    return new Promise((resolve, reject) => {
+        let filter = {}
+        if(filterByUser){
+            filter = { user: filterByUser }
+        }
+        Message.find(filter)
+            .populate('user')
+            .exec((err, populated) => {
+                if(err){
+                    return reject(err)
+                }
+                resolve(populated)
+            })
+    })
 }
 
 const updateMessage = (id, message) => {

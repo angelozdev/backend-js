@@ -16,9 +16,10 @@ app.use(express.urlencoded({ extended: false })) /* Para enviar datos desde un f
 
 // Routes
 app.use(require('./routes/message.routes'));
-app.use(require('./routes/user.routes'))
+app.use(require('./routes/user.routes'));
+app.use(require('./routes/chat.routes'))
 
 // Static Files
-app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
