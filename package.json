@@ -1,0 +1,21 @@
+{
+  "name": "backend-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "nodemon src/"
+  },
+  "keywords": [],
+  "author": "Angelo Zambrano <angelozam17@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.21",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0"
+  }
+}
