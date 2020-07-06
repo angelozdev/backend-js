@@ -5,12 +5,6 @@ const log = console.log;
 const chalk = require('chalk');
 const err = chalk.bold.bgRed;
 
-const renderIndex = (req, res) => {
-    if(req.query.error){
-        log(err('ERROR', req.query));
-    }
-}
-
 const addMessage = (user, message) => {
     return new Promise((resolve, reject) => {
         if(!user || !message){
@@ -51,7 +45,6 @@ const removeMessage = (id) => {
 
 
 module.exports = {
-    renderIndex,
     addMessage,
     getMessages,
     updateMessage,

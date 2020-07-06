@@ -33,8 +33,8 @@ const removeMessage = (id) => {
 }
 
 module.exports = {
-    add: addMessage,
-    get: getMessages,
+    add   : addMessage,
+    get   : getMessages,
     update: updateMessage,
     remove: removeMessage
 }

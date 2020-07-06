@@ -25,8 +25,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const { user, message } = req.body;
     addMessage(user, message)
-        .then(data => res.send('Sended!'))
-        .catch(err => res.send('ERROR to send'))
+        .then(() => res.send('Sended!'))
+        .catch(() => res.send('ERROR to send'))
 
 })
 
